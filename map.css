@@ -1,0 +1,52 @@
+.overlayControl { 
+    direction: ltr;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: center;
+    position: relative;
+    font-family: Arial, sans-serif;
+    -webkit-user-select: none;
+    font-size: 13px; 
+    padding-top: 1px;
+    padding-right: 6px;
+    padding-bottom: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid; 
+    border-top-color: rgb(113, 123, 135);
+    border-right-color: rgb(113, 123, 135);
+    border-bottom-color: rgb(113, 123, 135); 
+    border-left-color: rgb(113, 123, 135); 
+    border-image: initial; 
+    -webkit-box-shadow: rgba(0, 0, 0, 0.398438) 0px 2px 4px; 
+    box-shadow: rgba(0, 0, 0, 0.398438) 0px 2px 4px; 
+    min-width: 50px; color: rgb(0, 0, 0);
+    padding-left: 6px; 
+    background-image: initial;
+    background-attachment: initial;
+    background-origin: initial; 
+    background-clip: initial; 
+    background-color: rgb(255, 255, 255); 
+    background-position: initial initial; 
+    background-repeat: initial initial; 
+    cursor:pointer;
+}
+
+.addBtn {
+    background: url(resources/drop-add.gif) no-repeat center center;
+}
+
+.ico-test { background-color:#352788; width:15px; height:15px; background-image:none !important; }
+
+div [id^='form-'] *{box-sizing:border-box !important;-moz-box-sizing:border-box !important;-ms-box-sizing:border-box !important;-webkit-box-sizing:border-box !important;}
+
+#map_canvas *{box-sizing:content-box;-moz-box-sizing:content-box;-ms-box-sizing:content-box;-webkit-box-sizing:content-box}
+
+div.infowindow {
+    overflow-y:scroll;
+}

@@ -21,6 +21,7 @@
 						THEN CONCAT('<A HREF=\"mailto:', mm.email, '\">', mm.name, '</A>')
 						ELSE CONCAT('<A HREF=\"mailto:', mm.email, '\">', mm.name, '</A> from <A HREF=\"', mm.site_url, '\" target=\"new_\">', mm.site_name, '</A>')
 				     END AS map_mapper
+				   , default_map
 				   , default_zoom
 				   , img404
 				   , empty_map

@@ -5,13 +5,13 @@
 	
 	
 	$map_container = 3;
-	$map_name = 'Desert Palace';
-	$map_tile_url = 'alttp/desert_palace/';
+	$map_name = 'Skull Woods';
+	$map_tile_url = 'alttp/skull_woods/';
 	$mapper = '5';
 	$map_floor_min = -1;
-	$map_floor_max = 2;
-	$map_start_id = 324;
-	$map_order = 4;
+	$map_floor_max = 1;
+	$map_start_id = 350;
+	$map_order = 9;
 
 	$map_id = $map_start_id;
 	
@@ -159,5 +159,7 @@
 		
 		
 	}
-	
+
+//	echo "update map_layer set tile_url = 'alttp/hyrule_castle_tower/bg/' where map_layer_id >= 3003380 and title = 'BG';";
+	echo "UPDATE  map_map SET  default_map =  '1' WHERE  map_id = 351;";
 ?>

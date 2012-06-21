@@ -1,13 +1,13 @@
-function gup( name )
-{
-  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-  var regexS = "[\\?&]"+name+"=([^&#]*)";
-  var regex = new RegExp( regexS );
-  var results = regex.exec( window.location.href );
-  if( results == null )
-    return "";
-  else
-    return results[1];
+function gup(name) {
+	name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+	var regex = new RegExp( regexS );
+	var results = regex.exec( window.location.href );
+	if (results == null) {
+		return "";
+	} else {
+		return results[1];
+	}
 }
 
 //Ext.require(['*'])
@@ -24,13 +24,17 @@ Ext.require([
 	'Ext.ComponentQuery.*'
 ]);
 
+
 Ext.onReady(function() {
+
+
 	//*****************************************************************//
 	// CONFIG USER
     //*****************************************************************//
 	var mapLoad = gup("map");
 	var markerLoad = gup("marker");
-
+	var zoomLoad = gup("zoom");
+	
 	var settingsTreeStore = Ext.create('Ext.tree.Panel', {
 		id: 'user-tree-panel',
 		title: localize("%userMarkerSettingsTitle"),
@@ -106,6 +110,8 @@ Ext.onReady(function() {
 				});
 				this.editor = CKEDITOR.replace(this.inputEl.id,this.CKConfig);
 				this.editorId =this.editor.id;
+				this.initialHeight = this.getHeight();
+				this.initialWidth = this.getWidth();
 			},this);
 		},
 		onRender:function(ct, position){
@@ -137,7 +143,9 @@ Ext.onReady(function() {
 		var o = Ext.ComponentQuery.query('ckeditor[editorId="'+ e.editor.id +'"]'),
 		comp = o[0];
 		
-		e.editor.resize(comp.getWidth(), comp.getHeight())
+		e.editor.resize(comp.initialWidth, comp.initialHeight)
+		// This was changed because extjs 4.1.0 was not getting the correct height assigned in the code (it was getting the outer div height)
+		//e.editor.resize(comp.getWidth(), comp.getHeight())
 		
 		/* @TODO: http://dev.ckeditor.com/ticket/7038 Wait for new release with new feature, so we can set Basic toolbar and change to Full once maximized */
 		/*e.editor.on('beforeCommandExec',function(e){
@@ -358,9 +366,10 @@ Ext.onReady(function() {
 			{name : 'max_zoom', type : 'int'},
 			{name : 'map_copyright', type : 'string'},
 			{name : 'map_mapper', type : 'string'},
+			{name : 'default_map', type : 'boolean'},
 			{name : 'default_zoom', type : 'int'},
 			{name : 'img404', type : 'string'},
-			{name : 'empty_map', type : 'int'}			
+			{name : 'empty_map', type : 'boolean'}
 		],
 		proxy: {
 			type: 'rest',
@@ -537,7 +546,8 @@ Ext.onReady(function() {
 				markerStore.data.each(function(){
 					gmap.addMarkerFromDB(this.data);
 				});
-				if (markerLoad) { gmap.openMarkerById(markerLoad) };
+				if (markerLoad) { gmap.jumpToMarker(markerLoad, zoomLoad); markerLoad = null; zoomLoad = null; };
+				gmap.doUpdateMarkerCluster();
 			}
 		}			
 	});	
@@ -745,6 +755,7 @@ Ext.onReady(function() {
 														height: 220,
 														CKConfig: { 
 															toolbar: 'Full',
+															height: 220,
 															customConfig : 'ckeditor_cfg.js',
 								//													toolbarStartupExpanded : false
 														}  					
@@ -834,7 +845,7 @@ Ext.onReady(function() {
 								}
 
 								subCategoryMenu[this.data.marker_category_parent_id].add({
-											id:this.data.marker_category_id,
+											id:this.data.marker_category_id + '',
 											text: this.data.name,
 											categoryTypeId: this.data.marker_category_type_id,
 											icon:gmap.getMarkerURL() + gmap.getCategory(this.data.marker_category_id).img,
@@ -864,11 +875,11 @@ Ext.onReady(function() {
 										icon: Ext.MessageBox.INFO
 									});*/
 								}
-								subCategoryMenu[this.data.marker_category_parent_id].add({id:this.data.marker_category_id,text: this.data.name,  icon:gmap.getMarkerURL() + gmap.getCategory(this.data.marker_category_id).img, handler: clickHandler2});
+								subCategoryMenu[this.data.marker_category_parent_id].add({id:this.data.marker_category_id  + '',text: this.data.name,  icon:gmap.getMarkerURL() + gmap.getCategory(this.data.marker_category_id).img, handler: clickHandler2});
 								break;
 						}						
 					} else {
-						categoryMenu.add({icon:gmap.getMarkerURL() + gmap.getCategory(this.data.marker_category_id).img,id:this.data.marker_category_id,text: this.data.name, menu:subCategoryMenu[this.data.marker_category_id]});
+						categoryMenu.add({icon:gmap.getMarkerURL() + gmap.getCategory(this.data.marker_category_id).img,id:this.data.marker_category_id + '',text: this.data.name, menu:subCategoryMenu[this.data.marker_category_id]});
 					}
 		//        	categoryMenu.add({})					
 				});
@@ -1143,5 +1154,73 @@ Ext.onReady(function() {
 			markerStore.load();
 		},
 		interval: 10000
+	}
+
+
+
+	// Tutorial
+	function createCookie(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+		else var expires = "";
+		document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	}
+
+	function eraseCookie(name) {
+		createCookie(name,"",-1);
+	}
+	
+	var tutorialCookie = readCookie('zmaps_showtuto');
+	
+	if (tutorialCookie == null || tutorialCookie == 1) {
+	
+		createCookie('zmaps_showtuto','1');
+		
+		var tutorialCount = 1;
+		var maxTuto = 7;
+		function showTutorial(idx) {
+			Ext.MessageBox.show({
+				title: localize("%tutoTitle" + tutorialCount).replace("%c", tutorialCount).replace("%t", maxTuto),
+				msg: localize("%tuto" + tutorialCount),
+				//buttons: Ext.MessageBox.YESNO,
+				buttonText: (idx > 1 ? {yes: localize("%tutorialPrevious"), ok: localize("%tutorialDontShow"), no: localize("%tutorialNext")} : {ok: localize("%tutorialDontShow"), no: localize("%tutorialNext")}),
+				fn: showNextTutorial
+			});
+		}
+		
+		function showNextTutorial(btn) {
+			if (btn == "no") {
+				tutorialCount++;
+			} else if (btn == "cancel") {
+				//Ext.MessageBox.close();
+				return;
+			} else if (btn == "yes") {
+				tutorialCount--;
+			} if (btn == "ok") {
+				//tutorialCount = -2;
+				Ext.MessageBox.close();
+				createCookie('zmaps_showtuto','0');
+				return;
+			}
+			if (localize("%tuto" + tutorialCount) != ("%tuto" + tutorialCount)) {
+				showTutorial(tutorialCount);
+			}
+		};
+		
+		showTutorial(tutorialCount);
 	}
 });

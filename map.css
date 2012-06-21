@@ -50,3 +50,32 @@ div [id^='form-'] *{box-sizing:border-box !important;-moz-box-sizing:border-box 
 div.infowindow {
     overflow-y:scroll;
 }
+
+#map-copyright {
+	height: 19px; 
+	-webkit-user-select: none;
+	line-height: 19px;
+	padding-right: 2px;
+	padding-left: 2px;
+	background-image: linear-gradient(bottom, rgb(222,222,222) 40%, rgb(199,199,199) 70%);
+	background-image: -o-linear-gradient(bottom, rgb(222,222,222) 40%, rgb(199,199,199) 70%);
+	background-image: -moz-linear-gradient(bottom, rgb(222,222,222) 0, rgb(199,199,199) 0.496094);
+	background-image: -webkit-linear-gradient(right, rgba(255,255,255,0.496094) 30%, rgba(255,255,255,0.496094) 70%);
+	background-image: -ms-linear-gradient(bottom, rgb(222,222,222) 40%, rgb(199,199,199) 70%);
+	font-family: Arial, sans-serif; 
+	font-size: 10px; color: rgb(68, 68, 68); 
+	white-space: nowrap;
+	direction: ltr; 
+	text-align: right; 	background-position: initial initial; 
+	background-repeat: initial initial;
+}
+
+.labels {
+	font-size: 10px;
+	font-weight: bold;
+	font-family: Verdana, Arial, sans-serif; 
+	text-align: center;
+	vertical-align: middle;
+	white-space: wrap;
+	width: 100px;
+}

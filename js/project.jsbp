@@ -5668,20 +5668,20 @@
 	<item marked="false" name="autoPan" newName="" status="1" inStrings=""/>
 	<item marked="false" name="autoScroll" newName="" status="1" inStrings=""/>
 	<item marked="false" name="betaDiv" newName="" status="1" inStrings=""/>
-	<item marked="false" name="bindTo" newName="" status="1" inStrings=""/>
 	<item marked="false" name="bodyBorder" newName="" status="1" inStrings=""/>
 	<item marked="false" name="bodyStyle" newName="" status="1" inStrings=""/>
 	<item marked="false" name="BOTTOM_RIGHT" newName="" status="1" inStrings=""/>
 	<item marked="true" name="btn" newName="be" status="0" inStrings=""/>
 	<item marked="true" name="buildMap" newName="aw" status="0" inStrings=""/>
+	<item marked="false" name="ca" newName="" status="1" inStrings=""/>
 	<item marked="false" name="callParent" newName="" status="1" inStrings=""/>
 	<item marked="false" name="cascadeBy" newName="" status="1" inStrings=""/>
 	<item marked="true" name="cat" newName="bs" status="0" inStrings=""/>
-	<item marked="false" name="category" newName="" status="3" inStrings="3-9-2-0-2, 3-106-2-0-2, 4-73-1-0-2, 4-275-2-0-2, 5-156-2-0-2"/>
-	<item marked="false" name="category_id" newName="" status="3" inStrings="5-288-1-0-2"/>
+	<item marked="false" name="category" newName="" status="3" inStrings="3-9-2-0-2, 3-140-2-0-2, 4-74-1-0-2, 4-278-2-0-2, 5-148-2-0-2"/>
+	<item marked="false" name="category_id" newName="" status="3" inStrings="5-277-1-0-2"/>
 	<item marked="true" name="categoryId" newName="bn" status="0" inStrings=""/>
 	<item marked="true" name="categoryMenu" newName="by" status="0" inStrings=""/>
-	<item marked="true" name="categoryStore" newName="bO" status="0" inStrings="4-244-1-1-0"/>
+	<item marked="true" name="categoryStore" newName="bO" status="0" inStrings="4-247-1-1-0"/>
 	<item marked="true" name="categoryTree" newName="dG" status="0" inStrings=""/>
 	<item marked="false" name="categoryTypeId" newName="" status="1" inStrings=""/>
 	<item marked="true" name="cfg" newName="cv" status="0" inStrings=""/>
@@ -5690,6 +5690,7 @@
 	<item marked="false" name="cleanDefaultValue" newName="" status="1" inStrings=""/>
 	<item marked="false" name="cleanHtml" newName="" status="1" inStrings=""/>
 	<item marked="true" name="clearAddNewJumperMarker" newName="bK" status="0" inStrings=""/>
+	<item marked="false" name="clearMarkers" newName="" status="1" inStrings=""/>
 	<item marked="false" name="clickable" newName="" status="1" inStrings=""/>
 	<item marked="true" name="clickHandler" newName="R" status="0" inStrings=""/>
 	<item marked="true" name="clickHandler2" newName="T" status="0" inStrings=""/>
@@ -5704,8 +5705,8 @@
 	<item marked="false" name="CONNECT_FAILURE" newName="" status="1" inStrings=""/>
 	<item marked="false" name="Connection" newName="" status="1" inStrings=""/>
 	<item marked="false" name="containerScroll" newName="" status="1" inStrings=""/>
-	<item marked="false" name="control_checked" newName="" status="3" inStrings="4-146-1-0-2"/>
-	<item marked="false" name="control_visible" newName="" status="3" inStrings="4-144-1-0-2"/>
+	<item marked="false" name="control_checked" newName="" status="3" inStrings="4-149-1-0-2"/>
+	<item marked="false" name="control_visible" newName="" status="3" inStrings="4-147-1-0-2"/>
 	<item marked="true" name="controlChecked" newName="aq" status="0" inStrings=""/>
 	<item marked="true" name="controlDiv" newName="ax" status="0" inStrings=""/>
 	<item marked="true" name="controlDiv2" newName="bF" status="0" inStrings=""/>
@@ -5715,6 +5716,7 @@
 	<item marked="true" name="copyrightDiv" newName="aX" status="0" inStrings=""/>
 	<item marked="false" name="copyrights" newName="" status="1" inStrings=""/>
 	<item marked="true" name="createContextMenu" newName="h" status="0" inStrings=""/>
+	<item marked="false" name="createCookie" newName="" status="1" inStrings=""/>
 	<item marked="true" name="createOverlayControlElement" newName="ba" status="0" inStrings=""/>
 	<item marked="true" name="createOverlayControlElementSingle" newName="ay" status="0" inStrings=""/>
 	<item marked="false" name="createSequence" newName="" status="1" inStrings=""/>
@@ -5724,8 +5726,11 @@
 	<item marked="false" name="currentCenter" newName="" status="1" inStrings=""/>
 	<item marked="true" name="currentMapId" newName="ao" status="0" inStrings=""/>
 	<item marked="false" name="customConfig" newName="" status="0" inStrings=""/>
-	<item marked="false" name="default_zoom" newName="" status="3" inStrings="4-108-1-0-2"/>
+	<item marked="false" name="days" newName="" status="1" inStrings=""/>
+	<item marked="false" name="default_map" newName="" status="3" inStrings="4-109-1-0-2"/>
+	<item marked="false" name="default_zoom" newName="" status="3" inStrings="4-111-1-0-2"/>
 	<item marked="false" name="defaultAutoCreate" newName="" status="1" inStrings=""/>
+	<item marked="false" name="defaultMap" newName="" status="1" inStrings=""/>
 	<item marked="false" name="defaultType" newName="" status="1" inStrings=""/>
 	<item marked="false" name="define" newName="" status="1" inStrings=""/>
 	<item marked="false" name="div_" newName="" status="1" inStrings=""/>
@@ -5735,22 +5740,24 @@
 	<item marked="true" name="doMarkerJump" newName="aL" status="0" inStrings=""/>
 	<item marked="true" name="doUpdateAllMarkersVisibility" newName="aZ" status="0" inStrings=""/>
 	<item marked="true" name="doUpdateCategoryVisibility" newName="bB" status="0" inStrings=""/>
+	<item marked="false" name="doUpdateMarkerCluster" newName="" status="1" inStrings=""/>
 	<item marked="true" name="doUpdateMarkerVisibility" newName="ai" status="0" inStrings=""/>
 	<item marked="false" name="draw" newName="" status="1" inStrings=""/>
 	<item marked="false" name="DROPDOWN_MENU" newName="" status="1" inStrings=""/>
 	<item marked="true" name="dumped_text" newName="aN" status="0" inStrings=""/>
 	<item marked="false" name="editor" newName="" status="1" inStrings=""/>
-	<item marked="false" name="editorId" newName="" status="3" inStrings="4-40-10-0-2"/>
+	<item marked="false" name="editorId" newName="" status="3" inStrings="4-41-10-0-2"/>
 	<item marked="false" name="el" newName="" status="1" inStrings=""/>
-	<item marked="false" name="empty_map" newName="" status="3" inStrings="4-112-1-0-2"/>
+	<item marked="false" name="empty_map" newName="" status="3" inStrings="4-115-1-0-2"/>
 	<item marked="false" name="enableDD" newName="" status="1" inStrings=""/>
 	<item marked="false" name="enableEventPropagation" newName="" status="1" inStrings=""/>
 	<item marked="false" name="enableTabScroll" newName="" status="1" inStrings=""/>
+	<item marked="false" name="eraseCookie" newName="" status="1" inStrings=""/>
 	<item marked="true" name="erc" newName="cY" status="0" inStrings=""/>
-	<item marked="false" name="err" newName="" status="3" inStrings="3-25-2-0-2, 3-122-2-0-2, 4-304-2-0-2, 4-306-2-0-2, 4-308-2-0-2, 4-380-2-0-2, 4-382-2-0-2, 4-384-2-0-2, 5-180-2-0-2, 5-182-2-0-2, 5-184-2-0-2, 5-200-2-0-2, 5-258-2-0-2, 5-291-2-0-2"/>
+	<item marked="false" name="err" newName="" status="3" inStrings="3-25-2-0-2, 3-156-2-0-2, 4-307-2-0-2, 4-309-2-0-2, 4-311-2-0-2, 4-386-2-0-2, 4-388-2-0-2, 4-390-2-0-2, 5-172-2-0-2, 5-174-2-0-2, 5-176-2-0-2, 5-192-2-0-2, 5-247-2-0-2, 5-280-2-0-2"/>
 	<item marked="false" name="EUCLIDEAN_RANGE" newName="" status="1" inStrings=""/>
 	<item marked="true" name="EuclideanProjection" newName="t" status="0" inStrings=""/>
-	<item marked="false" name="Ext" newName="" status="3" inStrings="4-5-1-0-2, 4-6-1-0-2, 4-7-1-0-2, 4-8-1-0-2, 4-9-1-0-2, 4-10-1-0-2, 4-11-1-0-2, 4-12-1-0-2, 4-13-1-0-2, 4-14-1-0-2, 4-17-1-0-2, 4-32-1-0-2, 4-33-1-0-2, 4-56-1-0-2, 4-69-1-0-2, 4-72-1-0-2, 4-81-1-0-2, 4-118-1-0-2, 4-129-1-0-2, 4-154-1-0-2, 4-165-1-0-2, 4-208-1-0-2, 4-226-1-0-2, 4-243-1-0-2, 4-255-1-0-2, 4-318-1-0-2, 4-329-1-0-2, 4-339-1-0-2, 4-350-1-0-2, 4-368-1-0-2, 5-136-1-0-2"/>
+	<item marked="false" name="Ext" newName="" status="3" inStrings="4-5-1-0-2, 4-6-1-0-2, 4-7-1-0-2, 4-8-1-0-2, 4-9-1-0-2, 4-10-1-0-2, 4-11-1-0-2, 4-12-1-0-2, 4-13-1-0-2, 4-14-1-0-2, 4-18-1-0-2, 4-33-1-0-2, 4-34-1-0-2, 4-57-1-0-2, 4-70-1-0-2, 4-73-1-0-2, 4-82-1-0-2, 4-121-1-0-2, 4-132-1-0-2, 4-157-1-0-2, 4-168-1-0-2, 4-211-1-0-2, 4-229-1-0-2, 4-246-1-0-2, 4-258-1-0-2, 4-324-1-0-2, 4-335-1-0-2, 4-345-1-0-2, 4-356-1-0-2, 4-374-1-0-2, 5-128-1-0-2"/>
 	<item marked="false" name="extraParams" newName="" status="1" inStrings=""/>
 	<item marked="false" name="failure" newName="" status="1" inStrings=""/>
 	<item marked="false" name="failureType" newName="" status="1" inStrings=""/>
@@ -5796,16 +5803,18 @@
 	<item marked="true" name="gmap" newName="aR" status="0" inStrings=""/>
 	<item marked="true" name="GMap" newName="C" status="0" inStrings=""/>
 	<item marked="false" name="google" newName="" status="1" inStrings=""/>
-	<item marked="false" name="google_default" newName="" status="3" inStrings="4-86-1-0-2"/>
+	<item marked="false" name="google_default" newName="" status="3" inStrings="4-87-1-0-2"/>
+	<item marked="false" name="gridSize" newName="" status="1" inStrings=""/>
 	<item marked="false" name="gup" newName="" status="1" inStrings=""/>
 	<item marked="false" name="handler" newName="" status="1" inStrings=""/>
 	<item marked="true" name="hideCtxMenu" newName="an" status="0" inStrings=""/>
 	<item marked="false" name="HtmlEditor" newName="" status="1" inStrings=""/>
 	<item marked="true" name="icn" newName="aA" status="0" inStrings=""/>
 	<item marked="false" name="iconCls" newName="" status="1" inStrings=""/>
+	<item marked="false" name="idx" newName="" status="1" inStrings=""/>
 	<item marked="false" name="ignoreCheck" newName="" status="1" inStrings=""/>
 	<item marked="false" name="ImageMapType" newName="" status="1" inStrings=""/>
-	<item marked="false" name="img404" newName="" status="3" inStrings="4-110-1-0-2, 4-140-1-0-2"/>
+	<item marked="false" name="img404" newName="" status="3" inStrings="4-113-1-0-2, 4-143-1-0-2"/>
 	<item marked="true" name="info" newName="dK" status="0" inStrings=""/>
 	<item marked="false" name="INFO" newName="" status="1" inStrings=""/>
 	<item marked="false" name="InfoBubble" newName="" status="1" inStrings=""/>
@@ -5814,11 +5823,13 @@
 	<item marked="false" name="InfoWindow" newName="" status="1" inStrings=""/>
 	<item marked="false" name="init" newName="" status="1" inStrings=""/>
 	<item marked="false" name="initComponent" newName="" status="1" inStrings=""/>
+	<item marked="false" name="initialHeight" newName="" status="1" inStrings=""/>
+	<item marked="false" name="initialWidth" newName="" status="1" inStrings=""/>
 	<item marked="false" name="inputEl" newName="" status="1" inStrings=""/>
 	<item marked="false" name="inputType" newName="" status="1" inStrings=""/>
 	<item marked="false" name="insert" newName="" status="1" inStrings=""/>
 	<item marked="false" name="insertAt" newName="" status="1" inStrings=""/>
-	<item marked="false" name="is_registered" newName="" status="3" inStrings="4-323-1-0-2, 4-336-1-0-2"/>
+	<item marked="false" name="is_registered" newName="" status="3" inStrings="4-329-1-0-2, 4-342-1-0-2"/>
 	<item marked="false" name="isCheck" newName="" status="1" inStrings=""/>
 	<item marked="false" name="isEmpty" newName="" status="1" inStrings=""/>
 	<item marked="true" name="isInsideLimits" newName="aC" status="0" inStrings=""/>
@@ -5828,67 +5839,78 @@
 	<item marked="true" name="isValid" newName="bu" status="0" inStrings=""/>
 	<item marked="false" name="isWebKit" newName="" status="1" inStrings=""/>
 	<item marked="true" name="j" newName="j" status="0" inStrings=""/>
-	<item marked="true" name="jump_marker" newName="ap" status="0" inStrings=""/>
-	<item marked="false" name="jump_marker_id" newName="" status="3" inStrings="4-186-1-0-2"/>
+	<item marked="false" name="jump_marker_id" newName="" status="3" inStrings="4-189-1-0-2"/>
+	<item marked="false" name="jumpMarker" newName="" status="1" inStrings=""/>
+	<item marked="false" name="jumpToMarker" newName="" status="1" inStrings=""/>
 	<item marked="true" name="l" newName="l" status="0" inStrings=""/>
+	<item marked="false" name="labelAnchor" newName="" status="1" inStrings=""/>
+	<item marked="false" name="labelClass" newName="" status="1" inStrings=""/>
+	<item marked="false" name="labelContent" newName="" status="1" inStrings=""/>
+	<item marked="false" name="labelInBackground" newName="" status="1" inStrings=""/>
 	<item marked="false" name="labelWidth" newName="" status="1" inStrings=""/>
 	<item marked="false" name="lat" newName="" status="1" inStrings=""/>
 	<item marked="false" name="latLng" newName="" status="0" inStrings=""/>
 	<item marked="false" name="LatLng" newName="" status="1" inStrings=""/>
-	<item marked="false" name="leaf" newName="" status="3" inStrings="4-276-37-0-2, 5-157-37-0-2"/>
+	<item marked="false" name="leaf" newName="" status="3" inStrings="4-279-37-0-2, 5-149-37-0-2"/>
 	<item marked="false" name="level_padding" newName="" status="1" inStrings=""/>
 	<item marked="false" name="listeners" newName="" status="1" inStrings=""/>
 	<item marked="false" name="listeners_" newName="" status="1" inStrings=""/>
 	<item marked="false" name="lng" newName="" status="1" inStrings=""/>
 	<item marked="false" name="localize" newName="" status="0" inStrings=""/>
-	<item marked="false" name="map_copyright" newName="" status="3" inStrings="4-104-1-0-2"/>
-	<item marked="false" name="map_id" newName="" status="3" inStrings="4-82-1-0-2, 4-132-1-0-2, 4-168-1-0-2, 5-278-1-0-2"/>
-	<item marked="false" name="map_layer_id" newName="" status="3" inStrings="4-130-1-0-2"/>
-	<item marked="false" name="map_mapper" newName="" status="3" inStrings="4-106-1-0-2"/>
-	<item marked="false" name="map_overlay_id" newName="" status="3" inStrings="4-98-1-0-2"/>
-	<item marked="false" name="map_overlay_name" newName="" status="3" inStrings="4-100-1-0-2"/>
-	<item marked="false" name="map_type_name" newName="" status="3" inStrings="4-84-1-0-2"/>
+	<item marked="false" name="map_copyright" newName="" status="3" inStrings="4-105-1-0-2"/>
+	<item marked="false" name="map_id" newName="" status="3" inStrings="4-83-1-0-2, 4-135-1-0-2, 4-171-1-0-2, 5-267-1-0-2"/>
+	<item marked="false" name="map_layer_id" newName="" status="3" inStrings="4-133-1-0-2"/>
+	<item marked="false" name="map_mapper" newName="" status="3" inStrings="4-107-1-0-2"/>
+	<item marked="false" name="map_overlay_id" newName="" status="3" inStrings="4-99-1-0-2"/>
+	<item marked="false" name="map_overlay_name" newName="" status="3" inStrings="4-101-1-0-2"/>
+	<item marked="false" name="map_type_name" newName="" status="3" inStrings="4-85-1-0-2"/>
 	<item marked="false" name="mapId" newName="" status="0" inStrings=""/>
 	<item marked="true" name="mapId2" newName="cb" status="0" inStrings=""/>
-	<item marked="false" name="mapLayerStore" newName="" status="3" inStrings="4-155-1-0-2"/>
+	<item marked="false" name="mapLayerStore" newName="" status="3" inStrings="4-158-1-0-2"/>
 	<item marked="true" name="mapLoad" newName="dc" status="0" inStrings=""/>
 	<item marked="true" name="mapOptions" newName="aE" status="0" inStrings=""/>
-	<item marked="false" name="maps" newName="" status="1" inStrings=""/>
-	<item marked="false" name="mapStore" newName="" status="3" inStrings="4-119-1-0-2"/>
+	<item marked="false" name="maps" newName="" status="3" inStrings="3-100-95-0-2, 3-104-119-0-2, 3-116-6-0-2, 3-120-6-0-2, 3-124-153-0-2, 3-124-353-0-2, 3-231-95-0-2, 3-235-119-0-2, 3-247-6-0-2, 3-251-6-0-2, 3-255-153-0-2, 3-255-353-0-2"/>
+	<item marked="false" name="mapStore" newName="" status="3" inStrings="4-122-1-0-2"/>
 	<item marked="true" name="mapType" newName="bL" status="0" inStrings=""/>
 	<item marked="false" name="mapTypeControlOptions" newName="" status="1" inStrings=""/>
 	<item marked="false" name="MapTypeControlStyle" newName="" status="1" inStrings=""/>
 	<item marked="false" name="MapTypeId" newName="" status="1" inStrings=""/>
 	<item marked="false" name="mapTypeIds" newName="" status="1" inStrings=""/>
 	<item marked="false" name="mapTypes" newName="" status="1" inStrings=""/>
-	<item marked="false" name="marker_category_id" newName="" status="3" inStrings="4-170-1-0-2, 4-227-1-0-2"/>
-	<item marked="false" name="marker_category_parent_id" newName="" status="3" inStrings="4-229-1-0-2"/>
-	<item marked="false" name="marker_category_type_id" newName="" status="3" inStrings="4-172-1-0-2, 4-235-1-0-2"/>
-	<item marked="false" name="marker_ext" newName="" status="3" inStrings="4-96-1-0-2"/>
-	<item marked="false" name="marker_id" newName="" status="3" inStrings="4-166-1-0-2, 5-195-1-0-2, 5-251-1-0-2"/>
-	<item marked="false" name="marker_url" newName="" status="3" inStrings="4-94-1-0-2"/>
+	<item marked="false" name="marker_category_id" newName="" status="3" inStrings="4-173-1-0-2, 4-230-1-0-2"/>
+	<item marked="false" name="marker_category_parent_id" newName="" status="3" inStrings="4-232-1-0-2"/>
+	<item marked="false" name="marker_category_type_id" newName="" status="3" inStrings="4-175-1-0-2, 4-238-1-0-2"/>
+	<item marked="false" name="marker_ext" newName="" status="3" inStrings="4-97-1-0-2"/>
+	<item marked="false" name="marker_id" newName="" status="3" inStrings="4-169-1-0-2, 5-187-1-0-2, 5-240-1-0-2"/>
+	<item marked="false" name="marker_url" newName="" status="3" inStrings="4-95-1-0-2"/>
+	<item marked="false" name="markerClusterer" newName="" status="1" inStrings=""/>
+	<item marked="false" name="MarkerClusterer" newName="" status="1" inStrings=""/>
 	<item marked="true" name="markerDeleteForm" newName="aG" status="0" inStrings=""/>
 	<item marked="true" name="markerDragEnd" newName="bH" status="0" inStrings=""/>
 	<item marked="true" name="markerEditForm" newName="aa" status="0" inStrings=""/>
 	<item marked="true" name="markerExt" newName="cO" status="0" inStrings=""/>
+	<item marked="false" name="markerId" newName="" status="1" inStrings=""/>
 	<item marked="true" name="markerIdToGet" newName="dE" status="0" inStrings=""/>
 	<item marked="false" name="MarkerImage" newName="" status="1" inStrings=""/>
 	<item marked="true" name="markerLoad" newName="dO" status="0" inStrings=""/>
-	<item marked="true" name="markerStore" newName="dP" status="0" inStrings="4-209-1-1-0"/>
+	<item marked="true" name="markerStore" newName="dP" status="0" inStrings="4-212-1-1-0"/>
+	<item marked="false" name="markerTemp" newName="" status="1" inStrings=""/>
 	<item marked="true" name="markerTitle" newName="aQ" status="0" inStrings=""/>
 	<item marked="true" name="markerToOpen" newName="bG" status="0" inStrings=""/>
 	<item marked="true" name="markerURL" newName="aK" status="0" inStrings=""/>
+	<item marked="false" name="MarkerWithLabel" newName="" status="1" inStrings=""/>
 	<item marked="false" name="max_tab" newName="" status="1" inStrings=""/>
-	<item marked="false" name="max_zoom" newName="" status="3" inStrings="4-102-1-0-2"/>
+	<item marked="false" name="max_zoom" newName="" status="3" inStrings="4-103-1-0-2"/>
+	<item marked="false" name="maxTuto" newName="" status="1" inStrings=""/>
 	<item marked="false" name="maxZoom" newName="" status="1" inStrings=""/>
 	<item marked="true" name="me" newName="dp" status="0" inStrings=""/>
 	<item marked="false" name="MessageBox" newName="" status="3" inStrings="4-12-5-0-2"/>
 	<item marked="true" name="mkr" newName="dH" status="0" inStrings=""/>
-	<item marked="false" name="mkr_id" newName="" status="1" inStrings=""/>
 	<item marked="false" name="model" newName="" status="1" inStrings=""/>
 	<item marked="false" name="msg" newName="" status="1" inStrings=""/>
 	<item marked="false" name="Msg" newName="" status="1" inStrings=""/>
 	<item marked="false" name="msgTarget" newName="" status="1" inStrings=""/>
+	<item marked="false" name="nameEQ" newName="" status="1" inStrings=""/>
 	<item marked="true" name="newMarkerJump" newName="cz" status="0" inStrings=""/>
 	<item marked="true" name="newMarkerJumpDest" newName="cT" status="0" inStrings=""/>
 	<item marked="false" name="newMsg" newName="" status="1" inStrings=""/>
@@ -5897,6 +5919,7 @@
 	<item marked="false" name="ocid" newName="" status="1" inStrings=""/>
 	<item marked="false" name="offsetLat" newName="" status="1" inStrings=""/>
 	<item marked="false" name="offsetLng" newName="" status="1" inStrings=""/>
+	<item marked="false" name="ok" newName="" status="3" inStrings="4-314-1-0-2, 4-318-1-0-2, 4-429-1-0-2, 5-179-1-0-2, 5-184-1-0-2, 5-233-1-0-2, 5-237-1-0-2, 5-257-1-0-2, 5-261-1-0-2, 5-284-1-0-2, 5-288-1-0-2"/>
 	<item marked="false" name="OK" newName="" status="1" inStrings=""/>
 	<item marked="false" name="OKCANCEL" newName="" status="1" inStrings=""/>
 	<item marked="false" name="onAdd" newName="" status="1" inStrings=""/>
@@ -5912,7 +5935,7 @@
 	<item marked="false" name="opt_options" newName="" status="1" inStrings=""/>
 	<item marked="false" name="opt_point" newName="" status="0" inStrings=""/>
 	<item marked="true" name="originalPos" newName="dQ" status="0" inStrings=""/>
-	<item marked="false" name="overlay_id" newName="" status="3" inStrings="4-200-1-0-2, 5-279-1-0-2"/>
+	<item marked="false" name="overlay_id" newName="" status="3" inStrings="4-203-1-0-2, 5-268-1-0-2"/>
 	<item marked="true" name="overlayId" newName="dz" status="0" inStrings=""/>
 	<item marked="false" name="overlayImage" newName="" status="1" inStrings=""/>
 	<item marked="true" name="overlayMap" newName="dh" status="0" inStrings=""/>
@@ -5933,6 +5956,7 @@
 	<item marked="false" name="query" newName="" status="1" inStrings=""/>
 	<item marked="false" name="QUESTION" newName="" status="1" inStrings=""/>
 	<item marked="false" name="read" newName="" status="1" inStrings=""/>
+	<item marked="false" name="readCookie" newName="" status="1" inStrings=""/>
 	<item marked="false" name="reader" newName="" status="1" inStrings=""/>
 	<item marked="false" name="records" newName="" status="1" inStrings=""/>
 	<item marked="false" name="regex" newName="" status="1" inStrings=""/>
@@ -5973,9 +5997,11 @@
 	<item marked="true" name="showCtxMenu" newName="cN" status="0" inStrings=""/>
 	<item marked="true" name="showCtxMenuMkr" newName="ad" status="0" inStrings=""/>
 	<item marked="true" name="showJumpMarkerConfirmation" newName="bV" status="0" inStrings=""/>
+	<item marked="false" name="showNextTutorial" newName="" status="1" inStrings=""/>
 	<item marked="true" name="showNotApproved" newName="ar" status="0" inStrings=""/>
 	<item marked="true" name="showOnlyMine" newName="aT" status="0" inStrings=""/>
 	<item marked="true" name="showOverlay" newName="v" status="0" inStrings=""/>
+	<item marked="false" name="showTutorial" newName="" status="1" inStrings=""/>
 	<item marked="false" name="simpleSortMode" newName="" status="1" inStrings=""/>
 	<item marked="false" name="single" newName="" status="1" inStrings=""/>
 	<item marked="false" name="span_" newName="" status="1" inStrings=""/>
@@ -5985,24 +6011,24 @@
 	<item marked="false" name="subCategoryMenu" newName="" status="1" inStrings=""/>
 	<item marked="false" name="successProperty" newName="" status="1" inStrings=""/>
 	<item marked="true" name="switchMap" newName="F" status="0" inStrings=""/>
-	<item marked="false" name="Tab" newName="" status="3" inStrings="3-48-1-0-2, 3-62-1-0-2, 4-11-9-0-2, 4-221-5-0-2"/>
-	<item marked="false" name="tab_id" newName="" status="3" inStrings="4-188-1-0-2"/>
-	<item marked="false" name="tab_text" newName="" status="3" inStrings="4-192-1-0-2"/>
-	<item marked="false" name="tab_title" newName="" status="3" inStrings="4-190-1-0-2"/>
-	<item marked="false" name="tab_user_id" newName="" status="3" inStrings="4-194-1-0-2"/>
-	<item marked="false" name="tab_user_name" newName="" status="3" inStrings="4-196-1-0-2"/>
+	<item marked="false" name="Tab" newName="" status="3" inStrings="3-48-1-0-2, 3-62-1-0-2, 4-11-9-0-2, 4-224-5-0-2"/>
+	<item marked="false" name="tab_id" newName="" status="3" inStrings="4-191-1-0-2"/>
+	<item marked="false" name="tab_text" newName="" status="3" inStrings="4-195-1-0-2"/>
+	<item marked="false" name="tab_title" newName="" status="3" inStrings="4-193-1-0-2"/>
+	<item marked="false" name="tab_user_id" newName="" status="3" inStrings="4-197-1-0-2"/>
+	<item marked="false" name="tab_user_name" newName="" status="3" inStrings="4-199-1-0-2"/>
 	<item marked="true" name="tabCount" newName="dN" status="0" inStrings=""/>
 	<item marked="true" name="tabId" newName="dg" status="0" inStrings=""/>
 	<item marked="false" name="TabPanel" newName="" status="1" inStrings=""/>
 	<item marked="true" name="tabText" newName="cL" status="0" inStrings=""/>
-	<item marked="false" name="tabTitle" newName="" status="3" inStrings="3-47-2-0-2, 3-144-2-0-2, 4-283-2-0-2, 5-114-2-0-2, 5-129-2-0-2, 5-164-2-0-2"/>
+	<item marked="false" name="tabTitle" newName="" status="3" inStrings="3-47-2-0-2, 3-178-2-0-2, 4-286-2-0-2, 5-106-2-0-2, 5-121-2-0-2, 5-156-2-0-2"/>
 	<item marked="true" name="tabUserId" newName="bP" status="0" inStrings=""/>
 	<item marked="true" name="tabUserName" newName="dj" status="0" inStrings=""/>
 	<item marked="false" name="tag" newName="" status="1" inStrings=""/>
 	<item marked="false" name="task" newName="" status="1" inStrings=""/>
 	<item marked="false" name="TaskManager" newName="" status="3" inStrings="4-13-5-0-2"/>
-	<item marked="false" name="tile_ext" newName="" status="3" inStrings="4-92-1-0-2, 4-138-1-0-2"/>
-	<item marked="false" name="tile_url" newName="" status="3" inStrings="4-90-1-0-2, 4-136-1-0-2"/>
+	<item marked="false" name="tile_ext" newName="" status="3" inStrings="4-93-1-0-2, 4-141-1-0-2"/>
+	<item marked="false" name="tile_url" newName="" status="3" inStrings="4-91-1-0-2, 4-139-1-0-2"/>
 	<item marked="true" name="tileExt" newName="cl" status="0" inStrings=""/>
 	<item marked="false" name="tileSize" newName="" status="1" inStrings=""/>
 	<item marked="true" name="tileUrl" newName="dF" status="0" inStrings=""/>
@@ -6011,21 +6037,23 @@
 	<item marked="false" name="TOP_LEFT" newName="" status="1" inStrings=""/>
 	<item marked="false" name="tp" newName="" status="1" inStrings=""/>
 	<item marked="true" name="treeStore" newName="dq" status="0" inStrings=""/>
+	<item marked="true" name="tutorialCookie" newName="dR" status="0" inStrings=""/>
+	<item marked="true" name="tutorialCount" newName="cK" status="0" inStrings=""/>
 	<item marked="true" name="updateMapCopyright" newName="V" status="0" inStrings=""/>
 	<item marked="true" name="updateMarkerAfterLogin" newName="bz" status="0" inStrings=""/>
 	<item marked="true" name="updateMarkerDraggable" newName="aY" status="0" inStrings=""/>
 	<item marked="true" name="updateOverlayControl" newName="aW" status="0" inStrings=""/>
 	<item marked="true" name="upperLimit" newName="ck" status="0" inStrings=""/>
 	<item marked="false" name="useArrows" newName="" status="1" inStrings=""/>
-	<item marked="false" name="user" newName="" status="3" inStrings="3-15-2-0-2, 3-112-2-0-2, 4-18-1-0-2, 4-357-2-0-2"/>
-	<item marked="false" name="user_id" newName="" status="3" inStrings="4-174-1-0-2, 4-319-1-0-2, 5-196-1-0-2, 5-254-1-0-2, 5-275-1-0-2"/>
-	<item marked="false" name="user_name" newName="" status="3" inStrings="4-176-1-0-2"/>
+	<item marked="false" name="user" newName="" status="3" inStrings="3-15-2-0-2, 3-146-2-0-2, 4-19-1-0-2, 4-363-2-0-2"/>
+	<item marked="false" name="user_id" newName="" status="3" inStrings="4-177-1-0-2, 4-325-1-0-2, 5-188-1-0-2, 5-243-1-0-2, 5-264-1-0-2"/>
+	<item marked="false" name="user_name" newName="" status="3" inStrings="4-179-1-0-2"/>
 	<item marked="true" name="userId" newName="az" status="0" inStrings=""/>
 	<item marked="true" name="userInfoForm" newName="bi" status="0" inStrings=""/>
 	<item marked="true" name="userInfoForm2" newName="af" status="0" inStrings=""/>
 	<item marked="true" name="userName" newName="cC" status="0" inStrings=""/>
-	<item marked="true" name="userStore" newName="cQ" status="0" inStrings="4-330-1-1-0"/>
-	<item marked="false" name="vBtn" newName="" status="1" inStrings=""/>
+	<item marked="true" name="userStore" newName="cQ" status="0" inStrings="4-336-1-1-0"/>
+	<item marked="true" name="vBtn" newName="ci" status="0" inStrings=""/>
 	<item marked="true" name="vCategory" newName="aI" status="0" inStrings=""/>
 	<item marked="true" name="vCategoryId" newName="cs" status="0" inStrings=""/>
 	<item marked="true" name="vCfg" newName="co" status="0" inStrings=""/>
@@ -6046,6 +6074,8 @@
 	<item marked="false" name="xtype" newName="" status="1" inStrings=""/>
 	<item marked="true" name="zoomIn" newName="k" status="0" inStrings=""/>
 	<item marked="true" name="zoomInClicked" newName="K" status="0" inStrings=""/>
+	<item marked="false" name="zoomLevel" newName="" status="1" inStrings=""/>
+	<item marked="false" name="zoomLoad" newName="" status="1" inStrings=""/>
 	<item marked="true" name="zoomOut" newName="H" status="0" inStrings=""/>
 	<item marked="true" name="zoomOutClicked" newName="J" status="0" inStrings=""/>
 </names>
@@ -6174,6 +6204,40 @@
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;All non-approved markers&quot;"/>
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%globalMarker&quot;"/>
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Global Marker?&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle1&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Tutorial - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto1&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Welcome to the open beta of Zelda Maps!&lt;br&gt;&lt;br&gt;Zelda Maps is one of the best way to view game maps and share your knowledge.&lt;br&gt;&lt;br&gt;This tutorial will guide you through all the features we have so you can make the best of it! Since we use the Googlemaps API, you should be familiar with a lots of elements present there.&lt;br&gt;&lt;br&gt;So, Let&apos;s get started!&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle2&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;The Map Interface - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto2&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;User interface overview:&lt;BR&gt;&lt;BR&gt;&lt;img src=&apos;tutorial/tuto1.png&apos; width=&apos;300&apos; height=&apos;170&apos;&gt;&lt;br&gt;&lt;br&gt;1- Multiple selectable maps&lt;BR&gt;2- Selectable Floors/Instances (only 1 per time)&lt;BR&gt;3- Selectable Layers (multiple per time)&lt;br&gt;4- Interactive Markers (click on them!)&lt;BR&gt;5-. User information/configuration&lt;BR&gt;6- Category Filter&lt;BR&gt;7- Mapper information&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle3&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Interactive Markers - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto3&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Interactive Markers are the heart and soul of this system.&lt;br&gt;You can click on them on any given type to get insightful&lt;br&gt;information regarding that marker.&lt;br&gt;&lt;br&gt;To add a marker, you needed to be logged in our forums.&lt;br&gt;Just right click anywhere on the map to bring a drop down&lt;br&gt;menu that with all the available options.&lt;br&gt;&lt;br&gt;You can also right click on a marker you&lt;br&gt;previously inserted to bring up another menu.&lt;br&gt;&lt;br&gt;&lt;img src=&apos;tutorial/tuto2.png&apos; width=&apos;367&apos; height=&apos;215&apos;&gt;&lt;br&gt;&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle4&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Types of Markers - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto4&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;&lt;center&gt;Markers come in three different shapes:&lt;br&gt;&lt;br&gt;&lt;table align=center cellspacing=&apos;20&apos;&gt;&lt;tr&gt;&lt;td align=center&gt;Information marker&lt;/td&gt;&lt;td align=center&gt;Jump Marker&lt;/td&gt;&lt;/tr&gt;&lt;td&gt;&lt;img src=&apos;tutorial/tuto3a.png&apos; width=200 height=158&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;img src=&apos;tutorial/tuto3b.png&apos; width=200 height=158&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;Label Marker&lt;br&gt;&lt;img src=&apos;tutorial/tuto3c.png&apos; width=200 height=158&gt;&lt;/center&gt;&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle5&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Floors/Instances - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto5&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Some maps have options to view different sections of the map, such as dungeons, present/future, light/dark world.&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;img src=&apos;tutorial/tuto4.png&apos; width=&apos;256&apos; height=&apos;256&apos;&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;By clicking on the corresponding section, you can easily switch between those sections.&lt;br&gt;&lt;br&gt;Please do note that markers are shown according not only to the map, but also the section (unless marked as global on insertion)&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle6&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Layers - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto6&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Some maps also have the layers feature, which you can enable or disable by clicking on them, adding more depth to a given by map.&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;img src=&apos;tutorial/tuto5.png&apos; width=&apos;256&apos; height=&apos;256&apos;&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;For example, a dungeon map could have 4 layers, such as the background, the floor, the enemies/allies, the secrets. You can easily switch between on/off of them by clicking on the corresponding element.&lt;br&gt;&lt;br&gt;Layers &lt;b&gt;do not&lt;/b&gt; affect markers placement onto the map.&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle7&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;End of tutorial - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto7&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;That&apos;s it for now!&lt;br&gt;&lt;br&gt;We have put a lot of effort on this and we hope that you like it. We sincerly hope that you share you knowledge and enjoy the maps!&lt;br&gt;&lt;br&gt;Any questions, issues, critics, go to our forum: zelda.com.br/forum.&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;img src=&apos;tutorial/tuto6.png&apos; width=&apos;224&apos; height=&apos;80&apos;&gt;&lt;br&gt;&lt;b&gt;It&apos;s dangerous to go alone. Here, use our maps!&lt;/b&gt;&lt;/center&gt;&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutorialDontShow&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Don&apos;t show this again!&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutorialPrevious&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Previous&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutorialNext&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Next&quot;"/>
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;pt&quot;"/>
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%gmapNotSupported&quot;"/>
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Caso o mapa n&amp;#227;o carregue, seu navegador n&amp;#227;o suporta o Google Maps.&quot;"/>
@@ -6271,6 +6335,40 @@
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Todos os n&amp;#227;o aprovados&quot;"/>
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%globalMarker&quot;"/>
 	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Marcador global?&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle1&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Tutorial - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto1&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Welcome to the open beta of Zelda Maps!&lt;br&gt;&lt;br&gt;Zelda Maps is one of the best way to view game maps and share your knowledge.&lt;br&gt;&lt;br&gt;This tutorial will guide you through all the features we have so you can make the best of it! Since we use the Googlemaps API, you should be familiar with a lots of elements present there.&lt;br&gt;&lt;br&gt;So, Let&apos;s get started!&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle2&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;The Map Interface - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto2&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;User interface overview:&lt;BR&gt;&lt;BR&gt;&lt;img src=&apos;tutorial/tuto1.png&apos; width=&apos;300&apos; height=&apos;170&apos;&gt;&lt;br&gt;&lt;br&gt;1- Multiple selectable maps&lt;BR&gt;2- Selectable Floors/Instances (only 1 per time)&lt;BR&gt;3- Selectable Layers (multiple per time)&lt;br&gt;4- Interactive Markers (click on them!)&lt;BR&gt;5-. User information/configuration&lt;BR&gt;6- Category Filter&lt;BR&gt;7- Mapper information&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle3&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Interactive Markers - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto3&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Interactive Markers are the heart and soul of this system.&lt;br&gt;You can click on them on any given type to get insightful&lt;br&gt;information regarding that marker.&lt;br&gt;&lt;br&gt;To add a marker, you needed to be logged in our forums.&lt;br&gt;Just right click anywhere on the map to bring a drop down&lt;br&gt;menu that with all the available options.&lt;br&gt;&lt;br&gt;You can also right click on a marker you&lt;br&gt;previously inserted to bring up another menu.&lt;br&gt;&lt;br&gt;&lt;img src=&apos;tutorial/tuto2.png&apos; width=&apos;367&apos; height=&apos;215&apos;&gt;&lt;br&gt;&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle4&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Types of Markers - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto4&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;&lt;center&gt;Markers come in three different shapes:&lt;br&gt;&lt;br&gt;&lt;table align=center cellspacing=&apos;20&apos;&gt;&lt;tr&gt;&lt;td align=center&gt;Information marker&lt;/td&gt;&lt;td align=center&gt;Jump Marker&lt;/td&gt;&lt;/tr&gt;&lt;td&gt;&lt;img src=&apos;tutorial/tuto3a.png&apos; width=200 height=158&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;img src=&apos;tutorial/tuto3b.png&apos; width=200 height=158&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;Label Marker&lt;br&gt;&lt;img src=&apos;tutorial/tuto3c.png&apos; width=200 height=158&gt;&lt;/center&gt;&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle5&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Floors/Instances - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto5&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Some maps have options to view different sections of the map, such as dungeons, present/future, light/dark world.&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;img src=&apos;tutorial/tuto4.png&apos; width=&apos;256&apos; height=&apos;256&apos;&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;By clicking on the corresponding section, you can easily switch between those sections.&lt;br&gt;&lt;br&gt;Please do note that markers are shown according not only to the map, but also the section (unless marked as global on insertion)&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle6&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Layers - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto6&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Some maps also have the layers feature, which you can enable or disable by clicking on them, adding more depth to a given by map.&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;img src=&apos;tutorial/tuto5.png&apos; width=&apos;256&apos; height=&apos;256&apos;&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;For example, a dungeon map could have 4 layers, such as the background, the floor, the enemies/allies, the secrets. You can easily switch between on/off of them by clicking on the corresponding element.&lt;br&gt;&lt;br&gt;Layers &lt;b&gt;do not&lt;/b&gt; affect markers placement onto the map.&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutoTitle7&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;End of tutorial - page %c of %t&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tuto7&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;That&apos;s it for now!&lt;br&gt;&lt;br&gt;We have put a lot of effort on this and we hope that you like it. We sincerly hope that you share you knowledge and enjoy the maps!&lt;br&gt;&lt;br&gt;Any questions, issues, critics, go to our forum: zelda.com.br/forum.&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;img src=&apos;tutorial/tuto6.png&apos; width=&apos;224&apos; height=&apos;80&apos;&gt;&lt;br&gt;&lt;b&gt;It&apos;s dangerous to go alone. Here, use our maps!&lt;/b&gt;&lt;/center&gt;&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutorialDontShow&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Don&apos;t show this again!&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutorialPrevious&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Previous&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;%tutorialNext&quot;"/>
+	<string fileIndex="3" inFunctionName="" unEscContent="&quot;Next&quot;"/>
 	<string fileIndex="4" inFunctionName="gup" unEscContent="&quot;  \[&quot;"/>
 	<string fileIndex="4" inFunctionName="gup" unEscContent="&quot;  \]&quot;"/>
 	<string fileIndex="4" inFunctionName="gup" unEscContent="&quot;[ \?&amp;]&quot;"/>
@@ -6288,6 +6386,7 @@
 	<string fileIndex="4" inFunctionName="" unEscContent="&apos;Ext.ComponentQuery.*&apos;"/>
 	<string fileIndex="4" inFunctionName="" unEscContent="&quot;map&quot;"/>
 	<string fileIndex="4" inFunctionName="" unEscContent="&quot;marker&quot;"/>
+	<string fileIndex="4" inFunctionName="" unEscContent="&quot;zoom&quot;"/>
 	<string fileIndex="4" inFunctionName="" unEscContent="&apos;Ext.tree.Panel&apos;"/>
 	<string fileIndex="4" inFunctionName="" unEscContent="&apos;user-tree-panel&apos;"/>
 	<string fileIndex="4" inFunctionName="" unEscContent="&quot;%userMarkerSettingsTitle&quot;"/>
@@ -6379,12 +6478,14 @@
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;string&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;map_mapper&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;string&apos;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;default_map&apos;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;boolean&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;default_zoom&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;int&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;img404&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;string&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;empty_map&apos;"/>
-	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;int&apos;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;boolean&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;rest&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;/users&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;json&apos;"/>
@@ -6581,6 +6682,7 @@
 	<string fileIndex="4" inFunctionName="clickHandler" unEscContent="&quot;%errConnection&quot;"/>
 	<string fileIndex="4" inFunctionName="clickHandler" unEscContent="&quot;%err&quot;"/>
 	<string fileIndex="4" inFunctionName="clickHandler" unEscContent="&quot;%cancel&quot;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;&apos;"/>
 	<string fileIndex="4" inFunctionName="clickHandler2" unEscContent="&apos;ok&apos;"/>
 	<string fileIndex="4" inFunctionName="clickHandler2" unEscContent="&quot;&lt;span style= &quot;color:red &quot;&gt;&quot;"/>
 	<string fileIndex="4" inFunctionName="clickHandler2" unEscContent="&quot;%jumpMarkerTextInfo1&quot;"/>
@@ -6588,6 +6690,8 @@
 	<string fileIndex="4" inFunctionName="clickHandler2" unEscContent="&apos;ok&apos;"/>
 	<string fileIndex="4" inFunctionName="clickHandler2" unEscContent="&quot;%jumpMarkerTitleInfo&quot;"/>
 	<string fileIndex="4" inFunctionName="clickHandler2" unEscContent="&quot;%jumpMarkerTextInfo1&quot;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;&apos;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;UserModels&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;Ext.data.Model&apos;"/>
 	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;user_id&apos;"/>
@@ -6671,6 +6775,34 @@
 	<string fileIndex="4" inFunctionName="createContextMenu" unEscContent="&quot;%zoomInHere&quot;"/>
 	<string fileIndex="4" inFunctionName="createContextMenu" unEscContent="&quot;%zoomOutHere&quot;"/>
 	<string fileIndex="4" inFunctionName="createContextMenu" unEscContent="&quot;contextmenu&quot;"/>
+	<string fileIndex="4" inFunctionName="createCookie" unEscContent="&quot;; expires=&quot;"/>
+	<string fileIndex="4" inFunctionName="createCookie" unEscContent="&quot;&quot;"/>
+	<string fileIndex="4" inFunctionName="createCookie" unEscContent="&quot;=&quot;"/>
+	<string fileIndex="4" inFunctionName="createCookie" unEscContent="&quot;; path=/&quot;"/>
+	<string fileIndex="4" inFunctionName="readCookie" unEscContent="&quot;=&quot;"/>
+	<string fileIndex="4" inFunctionName="readCookie" unEscContent="&apos;;&apos;"/>
+	<string fileIndex="4" inFunctionName="readCookie" unEscContent="&apos; &apos;"/>
+	<string fileIndex="4" inFunctionName="eraseCookie" unEscContent="&quot;&quot;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;zmaps_showtuto&apos;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;zmaps_showtuto&apos;"/>
+	<string fileIndex="4" inFunctionName="dump" unEscContent="&apos;1&apos;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%tutoTitle&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%c&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%t&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%tuto&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%tutorialPrevious&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%tutorialDontShow&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%tutorialNext&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%tutorialDontShow&quot;"/>
+	<string fileIndex="4" inFunctionName="showTutorial" unEscContent="&quot;%tutorialNext&quot;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&quot;no&quot;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&quot;cancel&quot;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&quot;yes&quot;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&quot;ok&quot;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&apos;zmaps_showtuto&apos;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&apos;0&apos;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&quot;%tuto&quot;"/>
+	<string fileIndex="4" inFunctionName="showNextTutorial" unEscContent="&quot;%tuto&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;showOnlyMyMarkers&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;showMyApproved&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;showMyNonApproved&quot;"/>
@@ -6750,15 +6882,12 @@
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;DIV&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;5px&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;BASE&quot;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&quot;1F&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;BASE&quot;"/>
+	<string fileIndex="5" inFunctionName="" unEscContent="&quot;Open&quot;"/>
+	<string fileIndex="5" inFunctionName="" unEscContent="&quot;&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;_&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;rect&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;zIndex&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;position&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;position&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;text&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;text&apos;"/>
+	<string fileIndex="5" inFunctionName="" unEscContent="&quot;labels&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;&lt;|&gt;&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;&lt;|&gt;&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;&lt;|&gt;&apos;"/>
@@ -6770,11 +6899,6 @@
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;contextmenu&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;click&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;click&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&quot;&quot;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;zIndex&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;position&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;position&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;text&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;DIV&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;%information&quot;"/>
@@ -6910,11 +7034,8 @@
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;right&quot;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;closeclick&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;dragstart&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;text&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;drag&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;dragend&apos;"/>
-	<string fileIndex="5" inFunctionName="" unEscContent="&apos;text&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;ok&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&apos;&lt;span style=&quot;color:red&quot;&gt;&apos;"/>
 	<string fileIndex="5" inFunctionName="" unEscContent="&quot;%moveMarkerText&quot;"/>

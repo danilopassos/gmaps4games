@@ -22,7 +22,8 @@ function GMap() {
 
 	var markerURL = null;
 	var markerExt = null;
-
+    this.markerClusterer;
+	
 	this.map;
 	this.mapType;
 	this.mapId;
@@ -251,6 +252,7 @@ GMap.prototype.constructor = function() {
 	user.isRegistered = false;
 	_this = this;
 	overlay = [];
+	markerClusterer = null;
 };
 
 /**
@@ -302,6 +304,7 @@ GMap.prototype.addMap = function(vMapToAdd) {
 		overlay[i].tileExt = vMapToAdd.tile_ext;
 		overlay[i].title = vMapToAdd.map_overlay_name;
 		overlay[i].img404 = vMapToAdd.img404;
+		overlay[i].defaultMap = vMapToAdd.default_map;		
 	} 
 	
 	this.copyrights[vMapToAdd.map_id] = vMapToAdd.map_copyright + ", " + vMapToAdd.map_mapper;
@@ -397,7 +400,7 @@ GMap.prototype.buildMap = function() {
 		enableEventPropagation: true,
 		mapTypeControlOptions: {
 			mapTypeIds: mapId,
-			style: (mapId.length > 8 ? google.maps.MapTypeControlStyle.DROPDOWN_MENU : google.maps.MapTypeControlStyle.DEFAULT)
+			style: (mapId.length > 1 ? google.maps.MapTypeControlStyle.DROPDOWN_MENU : google.maps.MapTypeControlStyle.DEFAULT)
 		}
 	};
 
@@ -531,6 +534,7 @@ GMap.prototype.buildMap = function() {
 	//setTimeout(_this.updateMapCopyright(map.getMapTypeId()), 50);
 	google.maps.event.addListenerOnce(map, 'idle', function() {
 		_this.updateMapCopyright(map.getMapTypeId());
+		_this.doUpdateMarkerCluster();
 		//google.maps.event.clearListeners(map, 'idle');
 	});
 		
@@ -569,7 +573,7 @@ GMap.prototype.showOverlay = function(overlayMap) {
 	_this.showOverlay(overlayMap, false);
 }
 
-// @TODO: ignoreCheck created because of problems on production server... need to better investigate
+// @TODO: ignoreCheck created because of problems on production server... need to investigate better 
 GMap.prototype.showOverlay = function(overlayMap, ignoreCheck) {
 	if (!ignoreCheck && _this._currentOverlay == overlayMap.id) {
 		return;
@@ -806,7 +810,7 @@ GMap.prototype.updateOverlayControl = function(mapId) {
 	controlDiv.style.padding = '5px';
 	
 	var x;
-	var c = 0;
+	var c;
 	
 	// Looping through the overlay array in order to find those that match the param mapId
 	for (var i = 0; i < overlay.length; i++) {
@@ -814,8 +818,10 @@ GMap.prototype.updateOverlayControl = function(mapId) {
 			x = overlay[i];
 			continue;
 		}
+
 		if (currentMapId == overlay[i].mapId) {
-			if (c == 0 || overlay[i].title == "1F") {
+			//alert(overlay[i].id + " " + overlay[i].title + " " + overlay[i].defaultMap);
+			if (overlay[i].defaultMap) {
 				c = overlay[i];
 			}
 			
@@ -837,6 +843,9 @@ GMap.prototype.updateOverlayControl = function(mapId) {
 	
 	
 	if (x != null && x.title.substring(0,4) == "BASE") {
+		if (c == null) {
+			c = overlay[0];
+		}
 		_this.showOverlay(c);
 	} else {
 		this._currentOverlay = 0;
@@ -911,11 +920,53 @@ GMap.prototype.openMarker = function(mkr) {
 	}
 }
 
-GMap.prototype.openMarkerById = function(mkr_id) {
+GMap.prototype.openMarkerById = function(markerId) {
+alert("Open" + 1);
 	try {
-		_this.openMarker(_this.getMarkerById(mkr_id));
+		_this.openMarker(_this.getMarkerById(markerId));
 	 } catch (err) {
 	 }
+}
+
+GMap.prototype.jumpToMarker = function(markerId, zoomLevel) {
+	// Get the marker id to jump
+	var jumpMarker = _this.getMarkerById(markerId);
+	
+	// Verify if the marker id was valid and we got a marker object.
+	if (jumpMarker == undefined || jumpMarker == null) {
+		return;
+	}
+
+	// If we got, change the map accordingly
+	// Needs to verify if we are going to change the map.
+	if (map.getMapTypeId() != jumpMarker.mapId && isInt(map.getMapTypeId())) {
+		map.setMapTypeId(jumpMarker.mapId + "");
+	}
+	_this.switchMap(jumpMarker.mapId);
+	for (var i = 0; i < overlay.length; i++) {
+		if (overlay[i].id == jumpMarker.overlayMap) {
+			_this.showOverlay(overlay[i], true);
+		}
+	}
+
+	_this.closeInfoWindow();
+	_this.closeAddNewMarkerDialog();
+	
+	// Sets the target marker as visible in order to appear, even if the
+	//  marker should be hidden by category or map_type issues 
+	jumpMarker.setVisible(true);
+	if (zoomLevel) {
+		try {
+			zoomLevel = parseInt(zoomLevel);
+		} catch (err) {
+		
+		}
+		map.setZoom(zoomLevel);
+	}
+	map.panTo(jumpMarker.position);
+	
+	// Open the info window after the jump is completed
+	_this.openInfoWindow(jumpMarker);
 }
 
 /**
@@ -953,23 +1004,21 @@ GMap.prototype.addMarkerFromDB = function(mkr) {
 				coord: [1, 1, 120, 48],
 				type: 'rect'
 			};
-			marker = new google.maps.Marker({
+			marker = new MarkerWithLabel({
 					position: new google.maps.LatLng(mkr.x,mkr.y),
 					icon: image,
 					shape: shape,
 					title: mkr.name,
 					autoPan: true,
-					clickable: true,
+					clickable: false,
 					draggable: (user.id == mkr.user_id),
-					map: map
-				});
-			var label = new Label({
-			   map: map
-			});
-			label.set('zIndex', 1234);
-			label.bindTo('position', marker, 'position');
-			label.set('text', marker.getTitle());
-			marker.label = label;				
+					map: map,
+					labelContent: mkr.name,
+					labelAnchor: new google.maps.Point(50,25),
+					labelClass: "labels", // the CSS class for the label
+					labelInBackground: false					
+				}
+			);			
 		} else {
 			var icn = new google.maps.MarkerImage(this.markerURL + category[mkr.marker_category_id].img,
 			  // This marker is 32 pixels wide by 32 pixels tall.
@@ -995,9 +1044,6 @@ GMap.prototype.addMarkerFromDB = function(mkr) {
 	} else {
 		marker.setPosition(new google.maps.LatLng(mkr.x,mkr.y));
 		marker.setTitle(mkr.name);
-		if (marker.categoryTypeId == 3 && marker.label != null) {
-			marker.label.set('text', marker.getTitle());
-		}
 	}
 
 	marker.id = mkr.marker_id;
@@ -1034,10 +1080,6 @@ GMap.prototype.addMarkerFromDB = function(mkr) {
 		//alert(marker.userId);
 		this.updateMarkerDraggable(marker, user.id == marker.userId);
 	} else {
-		if (marker.categoryTypeId == 3 && marker.label != null) {
-			marker.label.remove();
-			marker.label = null;
-		}
 	}
 
 	google.maps.event.addListener(marker, 'rightclick', function() {
@@ -1077,38 +1119,7 @@ GMap.prototype.addMarkerFromDB = function(mkr) {
 					_currentNewJumpMarkerDest = marker;
 					_this.showJumpMarkerConfirmation();
 				} else {
-					// Get the marker id to jump
-					var jump_marker = _this.getMarkerById(marker.jump_marker_id);
-					
-					// Verify if the marker id was valid and we got a marker object.
-					if (jump_marker == undefined || jump_marker == null) {
-						return;
-					}
-					
-					// If we got, change the map accordingly
-					// Needs to verify if we are going to change the map.
-					if (map.getMapTypeId() != jump_marker.mapId && isInt(map.getMapTypeId())) {
-						map.setMapTypeId(jump_marker.mapId + "");
-					}
-					_this.switchMap(jump_marker.mapId);
-					for (var i = 0; i < overlay.length; i++) {
-						if (overlay[i].id == jump_marker.overlayMap) {
-							_this.showOverlay(overlay[i], true);
-						}
-					}
-					
-
-					_this.closeInfoWindow();
-					_this.closeAddNewMarkerDialog();
-					
-					// Sets the target marker as visible in order to appear, even if the
-					//  marker should be hidden by category or map_type issues 
-					jump_marker.setVisible(true);
-					
-					map.panTo(jump_marker.position);
-					
-					// Open the info window after the jump is completed
-					_this.openInfoWindow(jump_marker);
+					_this.jumpToMarker(marker.jump_marker_id);
 				}
 			});			
 			break;
@@ -1126,6 +1137,26 @@ GMap.prototype.doUpdateAllMarkersVisibility = function() {
 	for (var i = 0; i < _gmarkers.length; i++) {
 		this.doUpdateMarkerVisibility(_gmarkers[i]);
 	}
+	this.doUpdateMarkerCluster();
+}
+
+GMap.prototype.doUpdateMarkerCluster = function() {
+	if (markerClusterer) {
+		markerClusterer.clearMarkers();
+	}
+	
+	// We need to create an array to filter the visible markers, since the marker cluster lib adds everything, even invisible markers
+	var markerTemp = [];
+	for (var i = 0; i < _gmarkers.length; i++) {
+		if (_gmarkers[i].getVisible()) {
+			markerTemp[markerTemp.length] = _gmarkers[i];
+		}
+	}
+	
+ 	markerClusterer = new MarkerClusterer(map, markerTemp, {
+		maxZoom: 4,
+		gridSize: 30
+	});
 }
 
 /**
@@ -1158,29 +1189,14 @@ GMap.prototype.doUpdateMarkerVisibility = function(marker) {
 			{
 				if (marker.getVisible() != true) {
 					marker.setVisible(true);
-					if (marker.categoryTypeId == 3) {
-						var label = new Label({
-						   map: map
-						});
-						label.set('zIndex', 1234);
-						label.bindTo('position', marker, 'position');
-						label.set('text', marker.getTitle());
-						marker.label = label;
-					}
 				}
 			} else {
+				if (_this._currentMarker != undefined && _this._currentMarker.id == marker.id) {
+					_this.closeInfoWindow();
+				}
+			
 				if (marker.getVisible() != false) {
 					marker.setVisible(false);
-					if (marker.categoryTypeId == 3) {
-						if (marker.label != null) {
-							marker.label.remove();
-						}
-						marker.label = null;
-					}
-					
-					if (_this._currentMarker != undefined && _this._currentMarker.id == marker.id) {
-						_this.closeInfoWindow();
-					}
 				}
 			}
 		} else {
@@ -1188,7 +1204,6 @@ GMap.prototype.doUpdateMarkerVisibility = function(marker) {
 		}
 	}
 };
-
 
 GMap.prototype.markerEditForm = function(marker) {
 	_this.closeInfoWindow();
@@ -1511,10 +1526,6 @@ GMap.prototype.markerDeleteForm = function(marker) {
 						   icon: Ext.MessageBox.INFO
 					   });
 					_this.closeInfoWindow();
-					if (marker.categoryTypeId == 3) {
-						marker.label.remove();
-						marker.label = null;
-					}					
 					marker.setVisible(false);
 					marker.isValid = 0;
 				},
@@ -1666,6 +1677,7 @@ GMap.prototype.updateMarkerAfterLogin = function() {
 	for (var i = 0; i < _gmarkers.length; i++) {
 		_this.updateMarkerDraggable(_gmarkers[i], user.id == _gmarkers[i].userId);
 	}
+	_this.doUpdateMarkerCluster();
 }
 
 /**
@@ -1679,10 +1691,7 @@ GMap.prototype.updateMarkerDraggable = function(marker, draggable) {
 			_this._markerLastPos = marker.getPosition();
 			marker.originalPos = marker.getPosition();
 			_this.closeInfoWindow();
-			if (marker.categoryTypeId == 3 && marker.label != null) {
-				marker.label.set('text', '');
-			}
-		});				
+		});
 		
 		google.maps.event.addListener(marker, 'drag', function() {
 			if (_this.isInsideLimits(marker.getPosition())) {
@@ -1698,11 +1707,6 @@ GMap.prototype.updateMarkerDraggable = function(marker, draggable) {
 			} else {
 				marker.setPosition(_this._markerLastPos);
 			}
-
-			if (marker.categoryTypeId == 3 && marker.label != null) {
-				marker.label.set('text', marker.getTitle());
-			}
-			
 
 			var markerDragEnd = function(btn, text, cfg){
 				if (btn == 'ok' && Ext.isEmpty(text)) {
@@ -1753,7 +1757,7 @@ GMap.prototype.updateMarkerDraggable = function(marker, draggable) {
 				   });			
 		});
 	} else {
-		// TODO: Implement removeListeners / setDraggable = false
+		marker.setDraggable(draggable);
 	}
 };
 

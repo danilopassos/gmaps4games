@@ -110,8 +110,8 @@ Ext.onReady(function() {
 				});
 				this.editor = CKEDITOR.replace(this.inputEl.id,this.CKConfig);
 				this.editorId =this.editor.id;
-				this.initialHeight = this.getHeight();
-				this.initialWidth = this.getWidth();
+//				this.initialHeight = this.getHeight();
+//				this.initialWidth = this.getWidth();
 			},this);
 		},
 		onRender:function(ct, position){
@@ -143,7 +143,10 @@ Ext.onReady(function() {
 		var o = Ext.ComponentQuery.query('ckeditor[editorId="'+ e.editor.id +'"]'),
 		comp = o[0];
 		
-		e.editor.resize(comp.initialWidth, comp.initialHeight)
+		//alert(comp.initialHeight + " " + comp.getHeight());
+		e.editor.resize(comp.getWidth(), 220);
+		// @TODO - BUG ... Hardcoding the value 220 because it's not getting it correctly.
+		//e.editor.resize(comp.initialWidth, comp.initialHeight);
 		// This was changed because extjs 4.1.0 was not getting the correct height assigned in the code (it was getting the outer div height)
 		//e.editor.resize(comp.getWidth(), comp.getHeight())
 		
@@ -543,11 +546,13 @@ Ext.onReady(function() {
 		listeners: {
 			 scope: this,
 			 load: function(markerStore, records){
+				var hasData = false;
 				markerStore.data.each(function(){
 					gmap.addMarkerFromDB(this.data);
+					hasData = true;
 				});
 				if (markerLoad) { gmap.jumpToMarker(markerLoad, zoomLoad); markerLoad = null; zoomLoad = null; };
-				gmap.doUpdateMarkerCluster();
+				if (hasData) { gmap.doUpdateMarkerCluster(); };
 			}
 		}			
 	});	
@@ -837,7 +842,7 @@ Ext.onReady(function() {
 											text: localize("%cancel"),
 											handler: function() {gmap.closeAddNewMarkerDialog(); tabCount = 0;}
 										}]
-									});							
+									});
 
 									div.form = form;
 

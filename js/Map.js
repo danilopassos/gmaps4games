@@ -1143,20 +1143,21 @@ GMap.prototype.doUpdateAllMarkersVisibility = function() {
 GMap.prototype.doUpdateMarkerCluster = function() {
 	if (markerClusterer) {
 		markerClusterer.clearMarkers();
-	}
-	
+	}	
+	/*
 	// We need to create an array to filter the visible markers, since the marker cluster lib adds everything, even invisible markers
 	var markerTemp = [];
 	for (var i = 0; i < _gmarkers.length; i++) {
 		if (_gmarkers[i].getVisible()) {
 			markerTemp[markerTemp.length] = _gmarkers[i];
 		}
-	}
+	}*/
 	
- 	markerClusterer = new MarkerClusterer(map, markerTemp, {
+ 	markerClusterer = new MarkerClusterer(map, _gmarkers, {
 		maxZoom: 4,
 		gridSize: 30
 	});
+	markerClusterer.setIgnoreHidden(true);	
 }
 
 /**
@@ -1220,15 +1221,15 @@ GMap.prototype.markerEditForm = function(marker) {
 	_this._currentMarker = marker;
 	
 	//---------------------------
-	var info=new Array();
+	var info = new Array();
 
-	info[0] = [{
+	info[0] = { // ExtJS 4.0.7 -> [{
 				title: localize("%information"),
 				anchor:'95%',
 				xtype: 'displayfield',
 				name: 'displayFieldMarkerCategory',						
 				value: localize("%addMarkerHelper")
-			}];
+			}; // ExtJS 4.0.7 -> }];
 	var tab_title = marker.tabTitle;
 	var tab_text = marker.tabText;
 	var tab_id = marker.tabId;
@@ -1237,7 +1238,7 @@ GMap.prototype.markerEditForm = function(marker) {
 	if (tab_title != undefined) {
 		for (tabCount = 1; tabCount <= tab_title.length; tabCount++) {
 			if (user.id == marker.tabUserId[tabCount - 1]) {
-				info[tabCount] = [{
+				info[tabCount] = {  // ExtJS 4.0.7 -> [{
 							title: tab_title[tabCount - 1],
 							closable: true,
 							defaultType: 'textfield',												
@@ -1272,9 +1273,9 @@ GMap.prototype.markerEditForm = function(marker) {
 									customConfig : 'ckeditor_cfg.js',
 								}
 							}]
-						}];
+						};
 			} else {
-				info[tabCount] = [{
+				info[tabCount] = {
 							title: tab_title[tabCount - 1],
 							closable: false,
 							readOnly: true,
@@ -1301,12 +1302,13 @@ GMap.prototype.markerEditForm = function(marker) {
 								name: 'tab' + tabCount + '_text', 
 								value: tab_text[tabCount - 1],
 								width: 550,
-								height: 220,
+								height: 220
 							}]
-						}];				
+						};
 			}
 		}
 	}
+	
 
 	var form = Ext.create('Ext.form.Panel', {
 		labelWidth: 65, // label settings here cascade unless overridden
@@ -1374,14 +1376,13 @@ GMap.prototype.markerEditForm = function(marker) {
 			enableTabScroll:true,
 			activeTab: 0,
 			defaults:{autoHeight:false, bodyStyle:'padding:10px'}, 
-			height: 300,	
+			height: 300,
 			plugins: [ Ext.ux.AddTabButton ],
 			createTab: function() { tabCount++;// Optional function which the plugin uses to create new tabs
 				return {
 					title: localize("%tab") + " " + tabCount,
 					closable: true,
 					defaultType: 'textfield',
-										
 					items: [{
 						fieldLabel: localize("%tabTitle"),
 						name: 'tab' + tabCount + '_title',
@@ -1391,16 +1392,17 @@ GMap.prototype.markerEditForm = function(marker) {
 						fieldLabel: localize("%tabDescription"), 
 						name: 'tab' + tabCount + '_text', 
 						width: 550,
-						height: 220,
+						height: 200,
 						CKConfig: { 
 							toolbar: 'Full',
+							height: 200,
 							customConfig : 'ckeditor_cfg.js',
 						}  					
 					}]					                
 				};
 			},
 			items: info
-		}],								
+		}],
 
 		buttons: [{
 			id:'btnFormSave',
@@ -1418,8 +1420,6 @@ GMap.prototype.markerEditForm = function(marker) {
 						user_id: user.id,
 						action: 'edit',
 						overlay_id: _this._currentOverlay
-//                                        pointLat:place.Point.coordinates[1],
-//                                        pointLng:place.Point.coordinates[0]
 					},
 					url:'ajax/marker_add.php',
 					success: function(form, action) {
@@ -1854,7 +1854,7 @@ GMap.prototype.addNewMarkerFromMenu = function(categoryId, divForm, categoryType
 		marker.infowindow.open(map,marker);
 		divForm.form.render(divForm);
 					
-		_gmarkers.push(marker);
+		//_gmarkers.push(marker);
 		_lastClickedPosition = null;
 		_currentNewMarker = marker;
 	}

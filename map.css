@@ -79,3 +79,11 @@ div.infowindow {
 	white-space: wrap;
 	width: 100px;
 }
+
+.infoWindowIcn {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	float: right;
+	margin: 2px;
+}

@@ -14,6 +14,9 @@
 function GMap() {
 	var _this;
 	
+	this.mapContainer;
+	this.mapUrl;
+	
 	this._currentMarker;
 	this._currentNewMarker;
 	this._currentOverlay = 0;
@@ -241,7 +244,8 @@ GMap.prototype.showCtxMenuMkr = function(vPositionPixel) {
 //** MAP                                                                    **//
 //****************************************************************************//
 
-GMap.prototype.constructor = function() {
+GMap.prototype.constructor = function(vMapContainer, vMapUrl) {
+	_this = this;
 	_defaultMaps = [];
 	mapType = [];
 	mapId = [];
@@ -249,10 +253,11 @@ GMap.prototype.constructor = function() {
 	_gmarkers = [];
 	_mapLastPos = [];
 	user = {};
-	user.isRegistered = false;
-	_this = this;
+	user.isRegistered = false;	
 	overlay = [];
 	markerClusterer = null;
+	_this.mapContainer = vMapContainer;
+	_this.mapUrl = vMapUrl;
 };
 
 /**
@@ -432,7 +437,6 @@ GMap.prototype.buildMap = function() {
 	
 	
 	google.maps.event.addListener(map, 'rightclick', function(event) {
-
 		// Save the last _lastClickedPosition
 		_lastClickedPosition = event.latLng;
 		_lastClickedPosition.mapId = _this.getMapId(map.getMapTypeId()); 
@@ -921,11 +925,21 @@ GMap.prototype.openMarker = function(mkr) {
 }
 
 GMap.prototype.openMarkerById = function(markerId) {
-alert("Open" + 1);
 	try {
 		_this.openMarker(_this.getMarkerById(markerId));
 	 } catch (err) {
 	 }
+}
+
+GMap.prototype.jumpToPosition = function(lat, lng, zoomLevel) {
+	try {
+		map.panTo(new google.maps.LatLng(parseFloat(lat),parseFloat(lng)));
+		if (zoomLevel) {
+			zoomLevel = parseInt(zoomLevel);
+			map.setZoom(zoomLevel);
+		}
+	} catch (err) {	
+	}
 }
 
 GMap.prototype.jumpToMarker = function(markerId, zoomLevel) {
@@ -1508,7 +1522,7 @@ GMap.prototype.markerDeleteForm = function(marker) {
 	// DELETE FORM
 	var doMarkerDelete = function(btn, text, cfg){
 		if (btn == 'ok' && Ext.isEmpty(text)) {
-			var newMsg = localize("%deletMarkerText") + "<br /><br /><span style=\"color:red\">" + localize("%deletMarkerText2") + "</span><br /><br />";
+			var newMsg = localize("%deleteMarkerText") + "<br /><br /><span style=\"color:red\">" + localize("%deleteMarkerText2") + "</span><br /><br />";
 			Ext.Msg.show(Ext.apply({}, { msg: newMsg }, cfg));
 			return;
 		}			
@@ -1546,8 +1560,8 @@ GMap.prototype.markerDeleteForm = function(marker) {
 	
 	//Ext.MessageBox.prompt('Confirmação de movimentação', 'Por favor, descreva o motivo para a nova posição:', markerDragEnd);
 	Ext.MessageBox.prompt({
-			   title: localize("%deletMarkerTitle"),
-			   msg: localize("%deletMarkerText") + "<br /><br />" + localize("%deletMarkerText2") + "<br /><br />",
+			   title: localize("%deleteMarkerTitle"),
+			   msg: localize("%deleteMarkerText") + "<br /><br />" + localize("%deleteMarkerText2") + "<br /><br />",
 			   width: 300,
 			   buttons: Ext.MessageBox.OKCANCEL,
 			   multiline: true,
@@ -1556,6 +1570,13 @@ GMap.prototype.markerDeleteForm = function(marker) {
 			   closable:false
 		   });	
 }		
+
+GMap.prototype.markerLinkForm = function(marker) {
+	//Ext.MessageBox.prompt(localize("%linkMarkerTitle"), localize("%linkMarkerText"), function() {}, window, false, "http://maps.zelda.com.br/?map=" + gup("map") + "&lat=" + marker.getPosition().lat() + "&lng=" + marker.getPosition().lng() + "&zoom=" + map.getZoom());
+	Ext.MessageBox.prompt(localize("%linkMarkerTitle"), localize("%linkMarkerText"), function() {}, window, false, _this.mapUrl + "?map=" + _this.mapContainer + "&marker=" + marker.id + "&zoom=" + map.getZoom());
+}		
+
+
 
 /**
  * Function to open a info window for markers
@@ -1574,55 +1595,51 @@ GMap.prototype.openInfoWindow = function(marker) {
 				|| (marker.tabText == undefined || marker.tabTitle == undefined)) {
 			_this._currentMarker = marker;
 			return;
-		}						
+		}
+
+		function buildTabInfo(markerId, tabText, tabUserName, isOwner) {
+			var div = document.createElement('DIV');
+			div.innerHTML =  tabText + "<br style='clear: both'><p style='clear: both; text-align: left; float:left; margin-right: 10px;'>ID: " + markerId + "</p><p style='text-align: right; float: right'>" + localize("%sentBy") + tabUserName + "</p><br style='clear: both'>";
+
+			if (isOwner) {
+				var p = document.createElement('P');
+				p.innerHTML = "<img src=\"resources/infowindow/delete.png\" alt=\"" + localize("%delete") + "\">";
+				p.className = "infoWindowIcn";
+				p.onclick = function() {_this.markerDeleteForm(marker);};
+				div.appendChild(p);
+				
+				var p = document.createElement('P');
+				p.innerHTML = "<img src=\"resources/infowindow/edit.png\" alt=\"" + localize("%edit") + "\">";
+				p.className = "infoWindowIcn";
+				p.onclick = function() {_this.markerEditForm(marker);};
+				div.appendChild(p);
+				
+				var p = document.createElement('P')
+				p.innerHTML = "<img src=\"resources/infowindow/link.png\" alt=\"" + localize("%link") + "\">";
+				p.className = "infoWindowIcn";
+				p.onclick = function() {_this.markerLinkForm(marker);};
+				div.appendChild(p);						
+			}
+	
+			return div;
+		}
 		
 		// Adding marker text
 		if (marker.tabTitle.length > 1) {
-//			_this.infoWindow = undefined;
 			_this.infoWindow = new InfoBubble();		
 			
 			// @TODO: Change author to tab, not by marker
 			for (var i = 0; i < marker.tabTitle.length; i++) {
-				var div = document.createElement('DIV');
-				div.innerHTML = marker.tabText[i] + "<p style='clear: both; text-align: right;'>Marker ID: " + marker.id + "<br />" + localize("%sentBy") + marker.tabUserName[i] + "</p>";
-				
-				if (user.id == marker.tabUserId[i] && marker.isValid) {
-					var p = document.createElement('P');
-					p.innerHTML = "[ " + localize("%delete") + " ]";
-					p.style.cssFloat = "right";
-					p.onclick = function() {_this.markerDeleteForm(marker);};
-					div.appendChild(p);
-					
-					var p = document.createElement('P');
-					p.innerHTML = "[ " + localize("%edit") + " ]";
-					p.style.cssFloat = "right";
-					p.onclick = function() {_this.markerEditForm(marker);};
-					div.appendChild(p);
-				}
-		
+				var div = buildTabInfo(marker.id, marker.tabText[i], marker.tabUserName[i], user.id == marker.tabUserId[i] && marker.isValid);
+
 				_this.infoWindow.addTab(marker.tabTitle[i], div);
 			}								
 		} else {
-			var div = document.createElement('DIV');
-			div.innerHTML =  marker.tabText[0] + "<p style='clear: both; text-align: right;'>Marker ID: " + marker.id + "<br />" + localize("%sentBy") + marker.tabUserName[0] + "</p>";
-			
+			var div = buildTabInfo(marker.id, marker.tabText[0], marker.tabUserName[0], user.id == marker.tabUserId[0] && marker.isValid);
+
 			_this.infoWindow = new google.maps.InfoWindow({
 				content: div
 			});
-			
-			if (user.id == marker.tabUserId[0] && marker.isValid) {
-				var p = document.createElement('P')
-				p.innerHTML = "[ " + localize("%delete") + " ]";
-				p.style.cssFloat = "right";
-				p.onclick = function() {_this.markerDeleteForm(marker);};
-				div.appendChild(p);		
-				
-				var p = document.createElement('P')
-				p.innerHTML = "[ " + localize("%edit") + " ]";
-				p.style.cssFloat = "right";
-				p.onclick = function() {_this.markerEditForm(marker);};
-				div.appendChild(p);
-			}
 		}
 	
 		google.maps.event.addListener(_this.infoWindow, 'closeclick', function() {
@@ -1631,7 +1648,7 @@ GMap.prototype.openInfoWindow = function(marker) {
 		
 		// Opening marker infoWindow (singleton)
 		_this.infoWindow.open(map,marker);
-		_this._currentMarker = marker;		
+		_this._currentMarker = marker;
 	}
 }
 
@@ -1674,8 +1691,14 @@ GMap.prototype.getMarkerById = function(markerIdToGet) {
 };
 
 GMap.prototype.updateMarkerAfterLogin = function() {
+	var temp = _this._currentMarker;
 	for (var i = 0; i < _gmarkers.length; i++) {
 		_this.updateMarkerDraggable(_gmarkers[i], user.id == _gmarkers[i].userId);
+	}
+	
+	if (temp &&_this.infoWindow) {
+		_this.closeInfoWindow();
+		_this.openMarker(temp);
 	}
 	_this.doUpdateMarkerCluster();
 }

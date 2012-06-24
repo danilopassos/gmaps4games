@@ -33,6 +33,8 @@ Ext.onReady(function() {
     //*****************************************************************//
 	var mapLoad = gup("map");
 	var markerLoad = gup("marker");
+//	var latLoad = gup("lat");
+//	var lngLoad = gup("lng");
 	var zoomLoad = gup("zoom");
 	
 	var settingsTreeStore = Ext.create('Ext.tree.Panel', {
@@ -412,7 +414,7 @@ Ext.onReady(function() {
 		listeners: {
 			 scope: this,
 			 load: function(mapStore, records){
-				gmap.constructor();
+				gmap.constructor(mapLoad, (window.location).toString().split("?")[0]);
 				mapStore.data.each(function(){
 					gmap.addMap(this.data);
 				});
@@ -551,6 +553,8 @@ Ext.onReady(function() {
 					gmap.addMarkerFromDB(this.data);
 					hasData = true;
 				});
+				// TO DO: In order to do by lat,lng ... we also need to have the sub-map and layers
+				//if (latLoad || lngLoad) { gmap.jumpToPosition(latLoad, lngLoad, zoomLoad); latLoad = null; lngLoad = null; zoomLoad = null; };
 				if (markerLoad) { gmap.jumpToMarker(markerLoad, zoomLoad); markerLoad = null; zoomLoad = null; };
 				if (hasData) { gmap.doUpdateMarkerCluster(); };
 			}
